@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+    environment:
+      - CONTAINER=web
+
+  redis:
+    image: "redis:alpine"
+
+  worker:
+    build: .
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+    environment:
+      - CONTAINER=celery
