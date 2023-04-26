@@ -6,8 +6,10 @@ This project will make any requested url in a shorted one using Django and Postg
 required 
 - docker
 - docker-compose 
-run `docker-compose build`
-run `docker-compose up`
+
+### Steps
+- run `docker-compose build`
+- run `docker-compose up`
 # Endpoints
 
 ## /shorten/{url}/
